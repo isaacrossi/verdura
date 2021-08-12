@@ -1,5 +1,115 @@
 @use "reset";
 
-body {
-    background-color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root{
+    size: 16px;
 }
+
+$primary-color: #66D8D6;
+$light-color: #f1f1f1;
+$dark-color: #252525;
+
+$heading-font: 'Permanent Marker', cursive;
+$body-font: 'Lato', sans-serif;
+
+$h1-size: 4.209rem; /* 67.34px */
+$h2-size: 3.157rem; /* 50.52px */
+$h3-size: 2.369rem; /* 37.90px */
+$h4-size: 1.777rem; /* 28.43px */
+$body-size: 1.333rem;   /* 21.33px */
+$smaller-body-size: 1rem; /* 16px */
+
+h1, h2, h3, h4 {
+  font-family: $heading-font;
+  line-height: 1;
+}
+
+.container {
+    padding-inline: 140px;
+}
+
+
+
+
+
+body {
+  font-size: $body-size;
+  font-family: $body-font;
+  line-height: 1.5;
+  background-color: $dark-color;
+  color: $light-color;
+}
+
+
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  padding-block: 2rem;
+    
+
+  &__link {
+    position: relative;
+    color: $dark-color;
+    font-size:$smaller-body-size;
+    font-family: $heading-font;
+    margin-right: 2.5rem;
+    cursor: pointer;   
+  }
+
+  &__link:last-child {
+    margin-right: 0px;
+  }
+
+  &__underline {
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;  
+    width: 0%;
+    transition: width 0.5s;
+  }
+
+  &__link:hover img {
+    width: 3rem;
+  }
+    
+}
+
+
+
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  font-size: $h1-size;
+  color: $dark-color;
+
+  &__veggie {
+      display: inline-block;
+      position: relative;
+  }
+
+  &__underline {
+      position: absolute;
+      left: 0;
+      bottom: -0.2em;  
+      width: 3em; 
+  }
+
+  &__image {
+      max-width: 40%;
+      padding-block: 0.5em;
+  }
+
+}
+
+

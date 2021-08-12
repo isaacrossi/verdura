@@ -5,6 +5,8 @@ var sourcemaps = require('gulp-sourcemaps')
 
 var browserSync = require("browser-sync").create()
 
+var imagemin = require("gulp-imagemin")
+
 gulp.task("sass", function () {
     return gulp.src("src/css/app.scss")
         .pipe(sourcemaps.init())
@@ -20,12 +22,13 @@ gulp.task("sass", function () {
 })
 
 gulp.task("html", function () {
-    return gulp.src("src/index.html")
+    return gulp.src("src/*.html")
         .pipe(gulp.dest("dist"))
 })
 
 gulp.task("images", function () {
     return gulp.src("src/img/*")
+        .pipe(imagemin())
         .pipe(gulp.dest("dist/img"))
 })
 
@@ -37,7 +40,7 @@ gulp.task("watch", function () {
         }
     })
 
-    gulp.watch("src/index.html", gulp.series("html")).on("change", browserSync.reload)
+    gulp.watch("src/*.html", gulp.series("html")).on("change", browserSync.reload)
     gulp.watch("src/css/app.scss", gulp.series("sass"))
     gulp.watch("src/img/*", gulp.series("images"))
 })
