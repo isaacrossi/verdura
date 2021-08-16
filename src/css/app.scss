@@ -32,11 +32,13 @@ section {
 }
 
 .container {
-    padding-inline: 8.75rem;
+    // padding-inline: 8.75rem;
+    padding-inline: 8rem;
 }
 
 .container--narrow {
-    padding-inline: 16.25rem;
+    // padding-inline: 16.25rem;
+    padding-inline: 14rem;
 }
 
 
@@ -70,7 +72,7 @@ body {
   &__link {
     position: relative;
     color: $dark-color;
-    font-size: $smaller-body-size;
+    font-size: $body-size;
     font-family: $heading-font;
     margin-right: 2.5rem;
     cursor: pointer;   
@@ -126,7 +128,7 @@ body {
       left: 0;
       bottom: -0.1em; 
       width: 3em; 
-      height: 12px;
+      height: 0.75rem;
   }
 
   &__image {
@@ -194,6 +196,10 @@ body {
     justify-content: center;
   }
 
+  &__item {
+    max-width: 365px;
+  }
+
   &__image {
     max-width: 100%;
   }
@@ -201,9 +207,10 @@ body {
   &__title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: $h4-size;
     font-family: $heading-font;
-    margin: 1rem 0 1rem 0;
+    margin: 1rem auto 1rem auto;
   }
 
 }
@@ -295,7 +302,7 @@ body {
 
 .register {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding-block: 4rem;
   background-color: $primary-color;
   color: $dark-color;
@@ -383,7 +390,7 @@ body {
 
 
 
-@media(min-width: 600px) {
+@media (min-width: 600px) {
   
   .card-wide {
     grid-column: span 2 / auto;
@@ -391,11 +398,73 @@ body {
 
 }
 
-@media(min-width: 1080px) {
+@media (min-width: 1080px) {
 
   .card-tall {
     grid-row: span 2 / auto;
   }
   
 }
+
+@media (max-width: 1040px) {
+
+  .hero {
+    font-size: $h2-size;
+  }
+
+}
+
+@media (max-width: 860px) {
+
+  html{
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  .container {
+    padding-inline: 4rem;
+  }
+
+  .container--narrow {
+    padding-inline: 4rem;
+  }
+
+  .about {
+    flex-direction: column;
+
+    &__3-words {
+      text-align: center;
+    }
+
+    &__paragraph {
+      max-width: 100%;
+    }
+  }
+
+
+  .register {
+    flex-direction: column;
+  }
+
+
+}
+
+@media (max-width: 580px) {
+  html {
+    font-size: 11px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+
+}
+
+
+
+
 
