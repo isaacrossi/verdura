@@ -61,8 +61,12 @@ body {
   align-items: center;
   background-color: $primary-color;
   padding-block: 2rem;
-    
 
+  &__logo {
+    height: 20px;
+  }
+  
+  
   &__link {
     position: relative;
     color: $dark-color;
@@ -215,6 +219,11 @@ body {
 
   &__location, &__hours, &__connect {
     flex: 1;
+
+    h3 {
+      font-size: $h3-size;
+    }
+
   }
 
 
@@ -229,16 +238,24 @@ body {
     display: flex;
     padding-top: 1rem;
 
-    img {
+    span {
+      width: 25px;
+      height: 30px;
+      background-image: url("img/phone.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
       margin-right: 0.5rem;
     }
 
   }
 
   &__hours {
+
     p {
       padding-bottom: 1rem;
     }
+
   }
 
 
@@ -264,26 +281,103 @@ body {
 
 }
 
-
-
-
-
 .photo {
   
   img {
     max-width: 100%;
   }
+
 }
 
 
 
 
 
+.register {
+  display: flex;
+  justify-content: center;
+  padding-block: 4rem;
+  background-color: $primary-color;
+  color: $dark-color;
+  min-height: 35vh;
+
+  &__form {
+    margin: 48px 24px;
+  }
+
+  &__eyes {
+    width: 108px;
+    height: 32px;
+    background-image: url("img/eyes_open.svg");
+  }
+
+  &__hand {
+    width: 72px;
+    height: 89px;
+    background-image: url("img/ok_hand.svg");
+    align-self: flex-end;
+  }
+
+  &__eyes,
+  &__hand {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  
+  &__heading {
+    font-size: $h3-size;
+    margin-bottom: 3rem;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+    border-bottom: solid 3px $light-color;
+    padding-bottom: 12px;
+  }
+
+  &__email,
+  &__submit {
+    background: none;
+    border: none;
+    font-size: 21px;
+    outline: none;
+  }
+
+}
 
 
 
 
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 2rem;
+  background-color: $light-color;
+  color: $dark-color;
+  font-size: $smaller-body-size;
+
+  &__socials a {
+    text-decoration: none;
+  }
+
+  &__instagram, &__facebook {
+    max-width: 20px;
+  }
+
+  &__instagram {
+    margin-right: 0.5rem;
+  }
+
+  &__logo {
+    height: 15px;
+  }
+
+}
 
 
 
