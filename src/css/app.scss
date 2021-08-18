@@ -28,7 +28,7 @@ h1, h2, h3, h4 {
 
 section {
     background-color: $dark-color;
-    padding-block: 8.75rem;
+    padding-block: 8.75rem;   
 }
 
 .container {
@@ -74,7 +74,7 @@ body {
     color: $dark-color;
     font-size: $body-size;
     font-family: $heading-font;
-    margin-right: 2.5rem;
+    margin-right: 2rem;
     cursor: pointer;   
   }
 
@@ -145,6 +145,7 @@ body {
   display: flex;
   justify-content: space-between;
   
+  
     &__3-words {
         font-size: $h2-size;
         color: $primary-color;
@@ -174,6 +175,7 @@ body {
 }
 
 .menu {
+
 
   &__header {
     font-size: $h3-size;    
@@ -216,6 +218,8 @@ body {
 }
 
 .details {
+
+  
   
   &__grid {
     display: grid;
@@ -288,6 +292,10 @@ body {
 
 }
 
+
+
+
+
 .photo {
   
   img {
@@ -313,14 +321,14 @@ body {
   }
 
   &__eyes {
-    width: 108px;
+    width: 6.5rem;
     height: 32px;
     background-image: url("img/eyes_open.svg");
   }
 
   &__hand {
     width: 72px;
-    height: 89px;
+    height: 5.5rem;
     background-image: url("img/ok_hand.svg");
     align-self: flex-end;
   }
@@ -350,7 +358,7 @@ body {
   &__submit {
     background: none;
     border: none;
-    font-size: 21px;
+    font-size: $body-size;
     outline: none;
   }
 
@@ -373,7 +381,7 @@ body {
   }
 
   &__instagram, &__facebook {
-    max-width: 20px;
+    max-width: 1.5rem;
   }
 
   &__instagram {
@@ -381,7 +389,7 @@ body {
   }
 
   &__logo {
-    height: 15px;
+    height: 1rem;
   }
 
 }
@@ -389,7 +397,7 @@ body {
 
 
 
-
+// these stop the .details grid items from getting too small at smaller screens
 @media (min-width: 600px) {
   
   .card-wide {
@@ -397,6 +405,7 @@ body {
   }
 
 }
+
 
 @media (min-width: 1080px) {
 
@@ -406,10 +415,36 @@ body {
   
 }
 
+
+
+
+
+
+@media (max-width: 1080px) {
+
+  .register {
+    flex-direction: column;
+  }
+
+}
+
+
 @media (max-width: 1040px) {
 
-  .hero {
-    font-size: $h2-size;
+  html {
+    font-size: 12px;
+  }
+
+  .details {
+    
+    &__location, &__hours, &__connect {
+      align-self: end;
+    }
+
+    &__connect {
+      padding-bottom: 36px;
+    }
+
   }
 
 }
@@ -417,10 +452,25 @@ body {
 @media (max-width: 860px) {
 
   html{
-    font-size: 13px;
+    font-size: 10px;
+  }
+
+  $smaller-body-size: 14px;
+
+  body {
+    font-size: 16px;
+  }
+
+  .details {
+    
+    &__connect {
+      padding-bottom: 34px;
+    }
+
   }
 
 }
+
 
 @media (max-width: 750px) {
 
@@ -442,27 +492,73 @@ body {
     &__paragraph {
       max-width: 100%;
     }
+
   }
-
-
-  .register {
-    flex-direction: column;
-  }
-
 
 }
+
+@media (max-width: 597px) {
+
+  .details {
+
+    &__connect {
+      padding-bottom: 0px;
+    }
+
+  }
+}
+
 
 @media (max-width: 580px) {
-  html {
-    font-size: 11px;
+  
+  .container {
+    padding-inline: 2rem;
   }
 
-  body {
-    font-size: 16px;
+  .container--narrow {
+    padding-inline: 2rem;
   }
 
+  .hero {
+    &__text {
+      font-size: $h2-size;
+    }
+
+  }
+
+  .header {
+
+    &__logo{
+      height: 15px;
+    }
+
+  }
 
 }
+
+@media(max-width: 400px) {
+
+  .header {
+
+  }
+
+  .hero {
+
+    flex-direction: column-reverse;
+    padding-bottom: 4rem;
+
+    &__text {
+      width: 210px;
+    }
+
+    &__image {
+      margin-bottom: 1rem;
+    }
+
+  }
+}
+
+
 
 
 
