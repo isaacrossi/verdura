@@ -12,6 +12,21 @@ html{
 
 
 /*------------------------------------*\
+  #ANIMATIONS
+\*------------------------------------*/
+
+@keyframes fadeIn {
+  
+  0% { opacity: 0; }
+  100% { opacity: 100; }
+
+}
+
+
+
+
+
+/*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/
 
@@ -85,8 +100,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
   background-color: $primary-color;
   padding-block: 2rem;
+  transition: background-color 1s, padding-block 0.5s;
+  
 
   &__logo {
     height: 20px;
@@ -95,10 +117,12 @@ body {
   
   &__link {
     position: relative;
+    margin-right: 2rem;
     color: $dark-color;
     font-size: $body-size;
     font-family: $heading-font;
-    margin-right: 2rem;
+    text-decoration: none;
+    
     cursor: pointer;   
   }
 
@@ -430,13 +454,14 @@ body {
 .footer {
   display: flex;
   justify-content: space-between;
-  padding-block: 2rem;
+  padding-block: 1rem;
   background-color: $light-color;
   color: $dark-color;
   font-size: $smaller-body-size;
 
   &__socials a {
     text-decoration: none;
+    padding: 0.5rem;
   }
 
   &__instagram, &__facebook {
@@ -643,6 +668,12 @@ body {
       color: $light-color;
     }
   } 
+}
+
+.scrolled {
+  background-color: $light-color;
+  padding-block: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
 
