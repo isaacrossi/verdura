@@ -605,25 +605,45 @@ body {
 
 }
 
-@media(max-width: 400px) {
-
+@media(max-width: 420px) {
+  
   .hero {
 
     flex-direction: column-reverse;
-    padding-bottom: 4rem;
+    justify-content: center;
 
     &__text {
-      max-width: 97%;
+      visibility: hidden;
     }
 
     &__image {
-      margin-bottom: 2rem;
-      transform: rotate(90deg);
+      margin-top: 2rem;
+      max-width: 240px;
     }
 
   }
-}
 
+  .about {
+
+    position: relative;
+
+    &__3-words {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: $h1-size;
+    }
+
+    &__organic {
+      color: $dark-color;
+    }
+
+    &__local {
+      color: $light-color;
+    }
+  } 
+}
 
 
 
