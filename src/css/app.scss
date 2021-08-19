@@ -7,6 +7,14 @@ html{
     font-size: 16px;
 }
 
+
+
+
+
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
 $primary-color: #66D8D6;
 $light-color: #f1f1f1;
 $dark-color: #252525;
@@ -26,10 +34,13 @@ h1, h2, h3, h4 {
   line-height: 1;
 }
 
-section {
-    background-color: $dark-color;
-    padding-block: 8.75rem;   
-}
+
+
+
+
+/*------------------------------------*\
+  #HELPER-CLASSES
+\*------------------------------------*/
 
 .container {
     // padding-inline: 8.75rem;
@@ -45,6 +56,15 @@ section {
 
 
 
+/*------------------------------------*\
+  #DEFAULT-STYLES
+\*------------------------------------*/
+
+section {
+  background-color: $dark-color;
+  padding-block: 8.75rem;   
+}
+
 body {
   font-size: $body-size;
   font-family: $body-font;
@@ -56,6 +76,10 @@ body {
 
 
 
+
+/*------------------------------------*\
+  #PAGE-HEADER
+\*------------------------------------*/
 
 .header {
   display: flex;
@@ -109,6 +133,10 @@ body {
 
 
 
+/*------------------------------------*\
+  #HERO-SECTION
+\*------------------------------------*/
+
 .hero {
   display: flex;
   justify-content: space-between;
@@ -140,6 +168,10 @@ body {
 
 
 
+
+/*------------------------------------*\
+  #ABOUT-SECTION
+\*------------------------------------*/
 
 .about {
   display: flex;
@@ -173,6 +205,14 @@ body {
     }
 
 }
+
+
+
+
+
+/*------------------------------------*\
+  #MENU SECTION
+\*------------------------------------*/
 
 .menu {
 
@@ -216,6 +256,14 @@ body {
   }
 
 }
+
+
+
+
+
+/*------------------------------------*\
+  #DETAILS-SECTION
+\*------------------------------------*/
 
 .details {
 
@@ -284,7 +332,6 @@ body {
 
   }
 
-
   &__image {
     max-width: 100%;
     height: 100%;
@@ -295,6 +342,10 @@ body {
 
 
 
+
+/*------------------------------------*\
+  #PHOTO-SECTION
+\*------------------------------------*/
 
 .photo {
   
@@ -307,6 +358,10 @@ body {
 
 
 
+
+/*------------------------------------*\
+  #REGISTER-SECTION
+\*------------------------------------*/
 
 .register {
   display: flex;
@@ -368,6 +423,10 @@ body {
 
 
 
+/*------------------------------------*\
+  #PAGE-FOOTER
+\*------------------------------------*/
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -397,7 +456,11 @@ body {
 
 
 
-// these stop the .details grid items from getting too small at smaller screens
+
+/*------------------------------------*\
+  #MEDIA-QUERIES
+\*------------------------------------*/
+
 @media (min-width: 600px) {
   
   .card-wide {
@@ -414,10 +477,6 @@ body {
   }
   
 }
-
-
-
-
 
 
 @media (max-width: 1080px) {
@@ -447,6 +506,15 @@ body {
 
   }
 
+}
+
+@media (max-width: 1020px) {
+
+  .header {
+    &__link {
+      pointer-events: none;
+    }
+  }
 }
 
 @media (max-width: 860px) {
@@ -520,6 +588,7 @@ body {
   }
 
   .hero {
+    
     &__text {
       font-size: $h2-size;
     }
@@ -538,21 +607,18 @@ body {
 
 @media(max-width: 400px) {
 
-  .header {
-
-  }
-
   .hero {
 
     flex-direction: column-reverse;
     padding-bottom: 4rem;
 
     &__text {
-      width: 210px;
+      max-width: 97%;
     }
 
     &__image {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      transform: rotate(90deg);
     }
 
   }
