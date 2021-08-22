@@ -3,7 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-html{
+
+
+
+
+html {
     font-size: 16px;
 }
 
@@ -20,6 +24,24 @@ html{
   0% { opacity: 0; }
   100% { opacity: 100; }
 
+}
+
+
+
+
+
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-align-center {
+  @include flex;
+  
+  align-items: center;
 }
 
 
@@ -58,12 +80,10 @@ h1, h2, h3, h4 {
 \*------------------------------------*/
 
 .container {
-    // padding-inline: 8.75rem;
     padding-inline: 8rem;
 }
 
 .container--narrow {
-    // padding-inline: 16.25rem;
     padding-inline: 14rem;
 }
 
@@ -97,9 +117,7 @@ body {
 \*------------------------------------*/
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-align-center;
   position: fixed;
   top: 0;
   left: 0;
@@ -110,11 +128,13 @@ body {
   transition: background-color 1s, padding-block 0.5s;
   
 
+
   &__logo {
     height: 20px;
   }
   
-  
+
+
   &__link {
     position: relative;
     margin-right: 2rem;
@@ -122,7 +142,6 @@ body {
     font-size: $body-size;
     font-family: $heading-font;
     text-decoration: none;
-    
     cursor: pointer;   
   }
 
@@ -138,7 +157,7 @@ body {
     height: 6px;
     transition: width 0.5s;
   }
-
+  
   &__link:hover .header__underline--about {
       width: 2.8em;
   }
@@ -162,13 +181,13 @@ body {
 \*------------------------------------*/
 
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-align-center;
   padding-block: 0.5em;
   background-color: $primary-color;
   font-size: $h1-size;
   color: $dark-color;
+
+
 
   &__veggie {
       display: inline-block;
@@ -182,6 +201,8 @@ body {
       width: 3em; 
       height: 0.75rem;
   }
+
+
 
   &__image {
       max-width: 40%;
@@ -198,8 +219,7 @@ body {
 \*------------------------------------*/
 
 .about {
-  display: flex;
-  justify-content: space-between;
+  @include flex;
   
   
     &__3-words {
@@ -208,6 +228,8 @@ body {
         text-align: right;
         margin-right: 3.5rem;
     }
+
+
 
     &__welcome-heading {
         position: relative;
@@ -223,6 +245,8 @@ body {
         width: 3.8em;
         height: 6px;
     }
+
+
 
     &__paragraph {
         max-width: 360px;
@@ -240,7 +264,6 @@ body {
 
 .menu {
 
-
   &__header {
     font-size: $h3-size;    
     margin-bottom: 3.5rem;
@@ -254,6 +277,8 @@ body {
     width: 6.6em;
     height: 6px;
   }
+
+
 
   &__grid {
     display: grid;
@@ -271,9 +296,7 @@ body {
   }
 
   &__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-align-center;
     font-size: $h4-size;
     font-family: $heading-font;
     margin: 1rem auto 1rem auto;
@@ -291,14 +314,14 @@ body {
 
 .details {
 
-  
-  
   &__grid {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-auto-rows: 280px;
   }
+
+
 
   &__location, &__hours, &__connect {
     flex: 1;
@@ -333,6 +356,8 @@ body {
 
   }
 
+
+
   &__hours {
 
     p {
@@ -355,6 +380,7 @@ body {
     }
 
   }
+
 
   &__image {
     max-width: 100%;
@@ -388,16 +414,19 @@ body {
 \*------------------------------------*/
 
 .register {
-  display: flex;
-  justify-content: space-between;
+  @include flex; 
   padding-block: 4rem;
   background-color: $primary-color;
   color: $dark-color;
   min-height: 35vh;
 
+
+
   &__form {
     margin: 48px 24px;
   }
+
+
 
   &__eyes {
     width: 6.5rem;
@@ -412,17 +441,20 @@ body {
     align-self: flex-end;
   }
 
-  &__eyes,
-  &__hand {
+  &__eyes, &__hand {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
   
+
+
   &__heading {
     font-size: $h3-size;
     margin-bottom: 3rem;
   }
+
+
 
   &__inputs {
     display: flex;
@@ -433,8 +465,7 @@ body {
     padding-bottom: 12px;
   }
 
-  &__email,
-  &__submit {
+  &__email, &__submit {
     background: none;
     border: none;
     font-size: $body-size;
@@ -453,13 +484,13 @@ body {
 \*------------------------------------*/
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-align-center;
   padding-block: 1rem;
   background-color: $light-color;
   color: $dark-color;
   font-size: $smaller-body-size;
+
+
 
   &__socials a {
     text-decoration: none;
@@ -473,6 +504,8 @@ body {
   &__instagram {
     margin-right: 0.5rem;
   }
+
+
 
   &__logo {
     height: 1rem;
@@ -535,6 +568,7 @@ body {
 
 }
 
+
 @media (max-width: 1020px) {
 
   .header {
@@ -543,6 +577,7 @@ body {
     }
   }
 }
+
 
 @media (max-width: 860px) {
 
@@ -592,6 +627,7 @@ body {
 
 }
 
+
 @media (max-width: 597px) {
 
   .details {
@@ -631,6 +667,7 @@ body {
   }
 
 }
+
 
 @media(max-width: 420px) {
   
