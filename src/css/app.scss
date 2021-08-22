@@ -439,6 +439,7 @@ body {
     border: none;
     font-size: $body-size;
     outline: none;
+    cursor: pointer;
   }
 
 }
@@ -454,6 +455,7 @@ body {
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-block: 1rem;
   background-color: $light-color;
   color: $dark-color;
@@ -461,7 +463,7 @@ body {
 
   &__socials a {
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 0.25rem;
   }
 
   &__instagram, &__facebook {
@@ -536,8 +538,8 @@ body {
 @media (max-width: 1020px) {
 
   .header {
-    &__link {
-      pointer-events: none;
+    &__link img {
+      visibility: hidden;
     }
   }
 }
@@ -669,6 +671,14 @@ body {
     }
   } 
 }
+
+
+
+
+
+/*------------------------------------*\
+  #CLASSES-ADDED-BY-JS
+\*------------------------------------*/
 
 .scrolled {
   background-color: $light-color;

@@ -1,4 +1,4 @@
-const fadedTags = document.querySelectorAll("h2, h4, .hero__text, .fade h3, .fade p, .fade img, .fade span")
+const fadedTags = document.querySelectorAll("h2, h4, .hero__text, .hero__image, div.menu__grid, .fade h3, .fade p, .fade img, .fade span")
 
 fadedTags.forEach(tag => {
     tag.style.opacity = 0;
