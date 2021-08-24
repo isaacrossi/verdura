@@ -42,7 +42,7 @@ grabData().then(data => {
     data.forEach(item => {
         gridTag.innerHTML = gridTag.innerHTML + `
             <div class="menu__item">
-                <img src="${item.image}" class="menu__image">
+                <img src="${item.image}" alt="${item.description}" class="menu__image">
                 <div class="menu__title">
                     <h4>${item.title}</h4>
                     <p>${item.price}</p>
