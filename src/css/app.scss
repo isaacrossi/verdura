@@ -1,34 +1,24 @@
 @use "reset";
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-
-
-
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
-
-
-
-
 
 /*------------------------------------*\
   #ANIMATIONS
 \*------------------------------------*/
 
 @keyframes fadeIn {
-  
-  0% { opacity: 0; }
-  100% { opacity: 100; }
-
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
 }
-
-
-
-
 
 /*------------------------------------*\
   #MIXINS
@@ -40,56 +30,47 @@ html {
 
 @mixin flex-align-center {
   @include flex;
-  
+
   align-items: center;
 }
-
-
-
-
 
 /*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/
 
-$primary-color: #66D8D6;
+$primary-color: #66d8d6;
 $light-color: #f1f1f1;
 $dark-color: #252525;
 
-$heading-font: 'Permanent Marker', cursive;
-$body-font: 'Lato', sans-serif;
+$heading-font: "Permanent Marker", cursive;
+$body-font: "Lato", sans-serif;
 
 $h1-size: 4.209rem; /* 67.34px */
 $h2-size: 3.157rem; /* 50.52px */
 $h3-size: 2.369rem; /* 37.90px */
 $h4-size: 1.777rem; /* 28.43px */
-$body-size: 1.333rem;   /* 21.33px */
+$body-size: 1.333rem; /* 21.33px */
 $smaller-body-size: 1rem; /* 16px */
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: $heading-font;
   line-height: 1;
 }
-
-
-
-
 
 /*------------------------------------*\
   #HELPER-CLASSES
 \*------------------------------------*/
 
 .container {
-    padding-inline: 8rem;
+  padding-inline: 8rem;
 }
 
 .container--narrow {
-    padding-inline: 14rem;
+  padding-inline: 14rem;
 }
-
-
-
-
 
 /*------------------------------------*\
   #DEFAULT-STYLES
@@ -97,7 +78,7 @@ h1, h2, h3, h4 {
 
 section {
   background-color: $dark-color;
-  padding-block: 8.75rem;   
+  padding-block: 8.75rem;
 }
 
 body {
@@ -107,10 +88,6 @@ body {
   background-color: $dark-color;
   color: $light-color;
 }
-
-
-
-
 
 /*------------------------------------*\
   #PAGE-HEADER
@@ -126,23 +103,19 @@ body {
   background-color: $primary-color;
   padding-block: 2rem;
   transition: background-color 1s, padding-block 0.5s;
-  
-
 
   &__logo {
     height: 40px;
   }
-  
-
 
   &__link {
     position: relative;
     margin-right: 2rem;
     color: $dark-color;
-    font-size: $body-size;
-    font-family: $heading-font;
+    font-size: $smaller-body-size;
+    font-family: $body-font;
     text-decoration: none;
-    cursor: pointer;   
+    cursor: pointer;
   }
 
   &__link:last-child {
@@ -152,14 +125,14 @@ body {
   &__underline {
     position: absolute;
     left: 0;
-    bottom: -0.2em;  
+    bottom: -0.2em;
     width: 0%;
     height: 6px;
     transition: width 0.5s;
   }
-  
+
   &__link:hover .header__underline--about {
-      width: 2.8em;
+    width: 2.8em;
   }
 
   &__link:hover .header__underline--menu {
@@ -167,14 +140,9 @@ body {
   }
 
   &__link:hover .header__underline--location {
-    width: 4.2em;
+    width: 3.9em;
   }
-  
 }
-
-
-
-
 
 /*------------------------------------*\
   #HERO-SECTION
@@ -187,32 +155,23 @@ body {
   font-size: $h1-size;
   color: $dark-color;
 
-
-
   &__veggie {
-      display: inline-block;
-      position: relative;
+    display: inline-block;
+    position: relative;
   }
 
   &__underline {
-      position: absolute;
-      left: 0;
-      bottom: -0.1em; 
-      width: 3em; 
-      height: 0.75rem;
+    position: absolute;
+    left: 0;
+    bottom: -0.1em;
+    width: 3em;
+    height: 0.75rem;
   }
-
-
 
   &__image {
-      max-width: 40%;
+    max-width: 40%;
   }
-
 }
-
-
-
-
 
 /*------------------------------------*\
   #ABOUT-SECTION
@@ -220,52 +179,41 @@ body {
 
 .about {
   @include flex;
-  
-  
-    &__3-words {
-        font-size: $h2-size;
-        color: $primary-color;
-        text-align: right;
-        margin-right: 3.5rem;
-    }
 
+  &__3-words {
+    font-size: $h2-size;
+    color: $primary-color;
+    text-align: right;
+    margin-right: 3.5rem;
+  }
 
+  &__welcome-heading {
+    position: relative;
+    font-size: $h3-size;
+    padding-top: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
 
-    &__welcome-heading {
-        position: relative;
-        font-size: $h3-size;
-        padding-top: 3.5rem;
-        margin-bottom: 3.5rem;
-    }
+  &__underline {
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+    width: 3.8em;
+    height: 6px;
+  }
 
-    &__underline {
-        position: absolute;
-        left: 0;
-        bottom: -0.2em;
-        width: 3.8em;
-        height: 6px;
-    }
-
-
-
-    &__paragraph {
-        max-width: 360px;
-    }
-
+  &__paragraph {
+    max-width: 360px;
+  }
 }
-
-
-
-
 
 /*------------------------------------*\
   #MENU SECTION
 \*------------------------------------*/
 
 .menu {
-
   &__header {
-    font-size: $h3-size;    
+    font-size: $h3-size;
     margin-bottom: 3.5rem;
     position: relative;
   }
@@ -277,8 +225,6 @@ body {
     width: 6.6em;
     height: 6px;
   }
-
-
 
   &__grid {
     display: grid;
@@ -301,19 +247,13 @@ body {
     font-family: $heading-font;
     margin: 1rem auto 1rem auto;
   }
-
 }
-
-
-
-
 
 /*------------------------------------*\
   #DETAILS-SECTION
 \*------------------------------------*/
 
 .details {
-
   &__grid {
     display: grid;
     gap: 2rem;
@@ -321,25 +261,22 @@ body {
     grid-auto-rows: 280px;
   }
 
-
-
-  &__location, &__hours, &__connect {
+  &__location,
+  &__hours,
+  &__connect {
     flex: 1;
 
     h3 {
       font-size: $h3-size;
     }
-
   }
-
 
   &__headings {
     border-bottom: 3px solid $primary-color;
     padding-bottom: 0.5rem;
-    margin-bottom: 3.5rem
+    margin-bottom: 3.5rem;
   }
 
-  
   &__number {
     display: flex;
     padding-top: 1rem;
@@ -353,80 +290,55 @@ body {
       background-position: center;
       margin-right: 0.5rem;
     }
-
   }
 
-
-
   &__hours {
-
     p {
       padding-bottom: 1rem;
     }
-
   }
-
 
   &__days {
     color: $primary-color;
   }
 
-
   &__connect {
-
     p {
       color: $primary-color;
       padding-bottom: 1rem;
     }
-
   }
-
 
   &__image {
     max-width: 100%;
     height: 100%;
   }
-
 }
-
-
-
-
 
 /*------------------------------------*\
   #PHOTO-SECTION
 \*------------------------------------*/
 
 .photo {
-  
   img {
     max-width: 100%;
   }
-
 }
-
-
-
-
 
 /*------------------------------------*\
   #REGISTER-SECTION
 \*------------------------------------*/
 
 .register {
-  @include flex; 
+  @include flex;
   padding-block: 4rem;
   background-color: $primary-color;
   color: $dark-color;
   min-height: 35vh;
 
-
-
   &__form {
     margin: 48px 24px;
   }
-
-
 
   &__eyes {
     width: 6.5rem;
@@ -441,20 +353,17 @@ body {
     align-self: flex-end;
   }
 
-  &__eyes, &__hand {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-  
-
+  &__eyes,
+  &__hand {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   &__heading {
     font-size: $h3-size;
     margin-bottom: 3rem;
   }
-
-
 
   &__inputs {
     display: flex;
@@ -465,7 +374,8 @@ body {
     padding-bottom: 12px;
   }
 
-  &__email, &__submit {
+  &__email,
+  &__submit {
     background: none;
     border: none;
     font-size: $body-size;
@@ -476,12 +386,7 @@ body {
   &__email {
     cursor: text;
   }
-
 }
-
-
-
-
 
 /*------------------------------------*\
   #PAGE-FOOTER
@@ -494,87 +399,66 @@ body {
   color: $dark-color;
   font-size: $smaller-body-size;
 
-
-
   &__socials a {
     text-decoration: none;
     padding: 0.25rem;
   }
 
-  &__instagram, &__facebook {
-    max-width: 1.5rem;
+  &__instagram,
+  &__facebook {
+    max-width: 1.25rem;
   }
 
   &__instagram {
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
   }
-
-
 
   &__logo {
-    height: 1.5rem;
+    height: 1.75rem;
   }
-
 }
-
-
-
-
 
 /*------------------------------------*\
   #MEDIA-QUERIES
 \*------------------------------------*/
 
 @media (min-width: 600px) {
-  
   .card-wide {
     grid-column: span 2 / auto;
   }
-
 }
 
-
 @media (min-width: 1080px) {
-
   .card-tall {
     grid-row: span 2 / auto;
   }
-  
 }
 
-
 @media (max-width: 1080px) {
-
   .register {
     flex-direction: column;
   }
-
 }
 
-
 @media (max-width: 1040px) {
-
   html {
     font-size: 12px;
   }
 
   .details {
-    
-    &__location, &__hours, &__connect {
+    &__location,
+    &__hours,
+    &__connect {
       align-self: end;
     }
 
     &__connect {
       padding-bottom: 36px;
     }
-
   }
-
 }
 
-
 @media (max-width: 1020px) {
-
   .header {
     &__link img {
       visibility: hidden;
@@ -582,10 +466,8 @@ body {
   }
 }
 
-
 @media (max-width: 860px) {
-
-  html{
+  html {
     font-size: 10px;
   }
 
@@ -596,26 +478,19 @@ body {
   }
 
   .header {
-    
     &__logo {
       height: 30px;
     }
-
   }
 
   .details {
-    
     &__connect {
       padding-bottom: 34px;
     }
-
   }
-
 }
 
-
 @media (max-width: 750px) {
-
   .container {
     padding-inline: 4rem;
   }
@@ -634,26 +509,18 @@ body {
     &__paragraph {
       max-width: 100%;
     }
-
   }
-
 }
 
-
 @media (max-width: 597px) {
-
   .details {
-
     &__connect {
       padding-bottom: 0px;
     }
-
   }
 }
 
-
 @media (max-width: 580px) {
-  
   .container {
     padding-inline: 2rem;
   }
@@ -663,28 +530,20 @@ body {
   }
 
   .hero {
-    
     &__text {
       font-size: $h2-size;
     }
-
   }
 
   .header {
-
-    &__logo{
+    &__logo {
       height: 20px;
     }
-
   }
-
 }
 
-
-@media(max-width: 420px) {
-  
+@media (max-width: 420px) {
   .hero {
-
     flex-direction: column-reverse;
     justify-content: center;
 
@@ -696,11 +555,9 @@ body {
       margin-top: 2rem;
       max-width: 240px;
     }
-
   }
 
   .about {
-
     position: relative;
 
     &__3-words {
@@ -718,12 +575,8 @@ body {
     &__local {
       color: $light-color;
     }
-  } 
+  }
 }
-
-
-
-
 
 /*------------------------------------*\
   #CLASSES-ADDED-BY-JS
@@ -732,12 +585,5 @@ body {
 .scrolled {
   background-color: $light-color;
   padding-block: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-
-
-
-
-
