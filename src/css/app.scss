@@ -105,7 +105,7 @@ body {
   transition: background-color 1s, padding-block 0.5s;
 
   &__logo {
-    height: 40px;
+    height: 35px;
   }
 
   &__link {
@@ -463,6 +463,10 @@ body {
     &__link img {
       visibility: hidden;
     }
+
+    &__logo {
+      height: 30px;
+    }
   }
 }
 
@@ -479,7 +483,7 @@ body {
 
   .header {
     &__logo {
-      height: 30px;
+      height: 25px;
     }
   }
 
