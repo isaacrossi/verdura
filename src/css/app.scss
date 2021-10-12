@@ -1,7 +1,23 @@
 @use "reset";
 
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+@font-face {
+  font-family: "Agrandir-GrandHeavy";
+  src: url("Agrandir-GrandHeavy.woff2") format("woff2"),
+    url("Agrandir-GrandHeavy.woff") format("woff"),
+    url("Agrandir-GrandHeavy.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Agrandir-GrandLight";
+  src: url("Agrandir-GrandItalic.woff2") format("woff2"),
+    url("Agrandir-GrandItalic.woff") format("woff"),
+    url("Agrandir-GrandLight.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: italic;
+}
 
 html {
   font-size: 16px;
@@ -42,22 +58,26 @@ $primary-color: #66d8d6;
 $light-color: #f1f1f1;
 $dark-color: #252525;
 
-$heading-font: "Permanent Marker", cursive;
+$heading-font: "Agrandir-GrandHeavy";
 $body-font: "Lato", sans-serif;
 
-$h1-size: 4.209rem; /* 67.34px */
-$h2-size: 3.157rem; /* 50.52px */
-$h3-size: 2.369rem; /* 37.90px */
-$h4-size: 1.777rem; /* 28.43px */
-$body-size: 1.333rem; /* 21.33px */
+$h1-size: 3.052rem; /* 48.832px */
+$h2-size: 2.441rem; /* 39.056px */
+$h3-size: 1.953rem; /* 31.248px */
+$h4-size: 1.4rem; /* 22.4px */
+$body-size: 1.2rem; /* 19.2px */
 $smaller-body-size: 1rem; /* 16px */
 
-h1,
+h1 {
+  font-family: $heading-font;
+  line-height: 1.1;
+}
+
 h2,
 h3,
 h4 {
   font-family: $heading-font;
-  line-height: 1;
+  line-height: 1.3;
 }
 
 /*------------------------------------*\
@@ -70,6 +90,14 @@ h4 {
 
 .container--narrow {
   padding-inline: 14rem;
+}
+
+.italic {
+  font-family: "Agrandir-GrandLight";
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 /*------------------------------------*\
@@ -101,7 +129,7 @@ body {
   width: 100%;
   z-index: 1;
   background-color: $primary-color;
-  padding-block: 2rem;
+  padding-block: 1.5rem;
   transition: background-color 1s, padding-block 0.5s;
 
   &__logo {
@@ -114,7 +142,7 @@ body {
     color: $dark-color;
     font-size: $smaller-body-size;
     font-weight: 700;
-    font-family: $body-font;
+    font-family: $heading-font;
     text-decoration: none;
     cursor: pointer;
   }
@@ -133,15 +161,15 @@ body {
   }
 
   &__link:hover .header__underline--about {
-    width: 2.8em;
+    width: 4.5em;
   }
 
   &__link:hover .header__underline--menu {
-    width: 2.5em;
+    width: 4.05em;
   }
 
   &__link:hover .header__underline--location {
-    width: 3.9em;
+    width: 6.1em;
   }
 }
 
@@ -199,7 +227,7 @@ body {
     position: absolute;
     left: 0;
     bottom: -0.2em;
-    width: 3.8em;
+    width: 5.8em;
     height: 6px;
   }
 
@@ -223,7 +251,7 @@ body {
     position: absolute;
     left: 0;
     bottom: -0.2em;
-    width: 6.6em;
+    width: 10em;
     height: 6px;
   }
 
@@ -336,6 +364,7 @@ body {
   background-color: $primary-color;
   color: $dark-color;
   min-height: 35vh;
+  text-align: center;
 
   &__form {
     margin: 48px 24px;
@@ -436,12 +465,6 @@ body {
 }
 
 @media (max-width: 1080px) {
-  .register {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 1040px) {
   html {
     font-size: 12px;
   }
@@ -453,9 +476,17 @@ body {
       align-self: end;
     }
 
-    &__connect {
-      padding-bottom: 36px;
+    &__grid {
+      grid-template-columns: none;
     }
+
+    &__connect {
+      padding-bottom: 33px;
+    }
+  }
+
+  .register {
+    flex-direction: column;
   }
 }
 
@@ -543,6 +574,14 @@ body {
   .header {
     &__logo {
       height: 20px;
+    }
+  }
+}
+
+@media (max-width: 525px) {
+  .details {
+    &__grid {
+      grid-template-columns: 1fr;
     }
   }
 }
