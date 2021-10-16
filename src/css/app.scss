@@ -436,7 +436,7 @@ body {
 
   &__instagram,
   &__facebook {
-    max-width: 1.25rem;
+    max-width: 18px;
   }
 
   &__instagram {
@@ -444,7 +444,7 @@ body {
   }
 
   &__logo {
-    height: 1.75rem;
+    height: 25px;
   }
 }
 
@@ -467,6 +467,16 @@ body {
 @media (max-width: 1080px) {
   html {
     font-size: 12px;
+  }
+
+  .header {
+    &__link {
+      font-size: 14px;
+    }
+  }
+
+  .footer {
+    font-size: 14px;
   }
 
   .details {
@@ -515,7 +525,7 @@ body {
 
   .header {
     &__logo {
-      height: 25px;
+      height: 30px;
     }
   }
 
@@ -573,7 +583,7 @@ body {
 
   .header {
     &__logo {
-      height: 20px;
+      height: 30px;
     }
   }
 }
@@ -596,7 +606,7 @@ body {
     }
 
     &__image {
-      margin-top: 2rem;
+      margin-top: 72px;
       max-width: 240px;
     }
   }
@@ -629,5 +639,5 @@ body {
 .scrolled {
   background-color: $light-color;
   padding-block: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
